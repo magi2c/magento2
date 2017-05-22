@@ -1,12 +1,19 @@
-```bash
-docker-compose up --build -d
-```
+# Installation
 
 ```bash
+sh m2devbox-init.sh
+```
+
+
+### Notes:
+
+```bash
+# Entering to container:
+docker-compose exec --user magento2 web bash
+
+# 
 docker-compose exec --user magento2 web composer install
-```
 
-```bash
 docker-compose exec --user magento2 web php /var/www/magento2/bin/magento setup:install \
 --db-host=db \
 --db-name=magento2 \
@@ -24,6 +31,3 @@ docker-compose exec --user magento2 web php /var/www/magento2/bin/magento setup:
 --backend-frontname=admin
 ```
 
-```bash
-docker-compose exec --user magento2 web bash
-```
