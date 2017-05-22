@@ -3,6 +3,10 @@ docker-compose up --build -d
 ```
 
 ```bash
+docker-compose exec --user magento2 web composer install
+```
+
+```bash
 docker-compose exec --user magento2 web php /var/www/magento2/bin/magento setup:install \
 --db-host=db \
 --db-name=magento2 \

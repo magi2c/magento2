@@ -51,3 +51,6 @@ atlassian*
 !/vendor/.htaccess
 
 shared
+
+supervisord.log
+supervisord.pid

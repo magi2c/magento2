@@ -6,9 +6,9 @@
 version: '2'
 services:
     web:
-        container_name: magento2devbox_web_874ff272ae9ff8aac766a06ff9218089
+        container_name: magento2devbox_web
         restart: always
-        image: magento/magento2devbox-web:latest
+        image: jlpoveda/magento2devbox-web:latest
         volumes:
           - ".:/var/www/magento2"
           - "~/.composer:/home/magento2/.composer"
@@ -50,9 +50,11 @@ services:
         ports:
           - "80:80"
           - "22"
+          - "44100:44100"
+        working_dir: /var/www/magento2
 
     db:
-        container_name: magento2devbox_db_874ff272ae9ff8aac766a06ff9218089
+        container_name: magento2devbox_db
         restart: always
         image: mysql:5.6
         ports:
@@ -65,7 +67,7 @@ services:
           - "./shared/var/logs/mysql:/var/log/mysql"
 
     varnish:
-        container_name: magento2devbox_varnish_874ff272ae9ff8aac766a06ff9218089
+        container_name: magento2devbox_varnish
         restart: always
         depends_on:
           - "web"
@@ -74,14 +76,13 @@ services:
           - "6081"
 
     redis:
-        container_name: magento2devbox_redis_874ff272ae9ff8aac766a06ff9218089
+        container_name: magento2devbox_redis
         restart: always
         image: redis:3.0.7
 
     elasticsearch:
-        container_name: magento2devbox_elastic_874ff272ae9ff8aac766a06ff9218089
+        container_name: magento2devbox_elastic
         restart: always
         image: elasticsearch:2
         ports:
           - "9200"
-
