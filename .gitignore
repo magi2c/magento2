@@ -54,3 +54,5 @@ shared
 
 supervisord.log
 supervisord.pid
+
+app/etc/*.tmp
