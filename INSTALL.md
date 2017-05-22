@@ -28,8 +28,6 @@ Place your auth token at `~/.composer/auth.json` with the following contents, li
 }
 ```
 
-Then, just set `M2SETUP_USE_ARCHIVE` to `false` in your docker-compose.yml file. 
-
 ## Sample Data
 
 If you want install the __sample data__:
